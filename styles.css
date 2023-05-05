@@ -206,14 +206,17 @@ main {
   box-shadow: var(--light-shadow);
   transition: var(--transition);
   text-align: center;
-  height: 27rem;
-  width: 27rem;
+  height: 30rem;
+  width: 26rem;
   position: relative;
-  left: 5rem;
+  left: 6rem;
 }
 
 .review:hover {
   box-shadow: var(--dark-shadow);
+}
+.button-container{
+  margin-top:-1rem;
 }
 
 .img-container {
@@ -281,15 +284,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -2rem;
+  margin-top: 1rem;
   position: relative;
   right: 5.5rem;
 
 }
 
-.button-container {
-  margin-top: -2rem;
-}
+
 
 .prev-btn,
 .next-btn {

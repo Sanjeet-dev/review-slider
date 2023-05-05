@@ -29,3 +29,64 @@ const reviews = [
     text: 'Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ',
   },
 ];
+
+// selecting items
+
+const img = document.getElementById("person-img");
+const author = document.getElementById("author");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
+
+
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+// set starting feedbackers
+
+let currentPerson = 0;
+
+window.addEventListener('DOMContentLoaded',function(){
+  console.log("shake and move forward");
+  showPerson(currentPerson);
+  
+});
+
+// show person based on item
+
+function showPerson(item){
+  const person = reviews[item];
+  img.src=person.img;
+  author.textContent=person.name;
+  job.textContent=person.job;
+  info.textContent=person.text;
+
+}
+
+//show next person
+
+nextBtn.addEventListener('click', function(){
+  currentPerson++;
+  if(currentPerson > reviews.length-1){
+    currentPerson = 0;
+  }
+  showPerson(currentPerson);
+});
+
+// show prev person
+
+prevBtn.addEventListener('click', function(){
+  currentPerson--;
+  if(currentPerson < 0){
+    currentPerson = reviews.length-1;
+  }
+  showPerson(currentPerson);
+
+});
+
+//show random person
+
+randomBtn.addEventListener('click', function(){
+  currentPerson = Math.ceil((Math.random()*reviews.length-1));
+  showPerson(currentPerson);
+});
